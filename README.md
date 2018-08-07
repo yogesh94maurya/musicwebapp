@@ -1,4 +1,4 @@
-# musicwebapp
+# Music Web App using last.fm API
 An ajax based web application which uses API from last.fm to get details about artist, top album and similar artist.
 
 <h2><a href="https://lastfm-music-web-app.herokuapp.com/music.html">DEMO</a></h2>
