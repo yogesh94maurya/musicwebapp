@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<!-- Student Name:   -->
+<html lang="en">
+  <head>
+    <title>A Music Web Application</title>
+    <meta charset="utf-8"/>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+	<style>
+		/*
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		.row-1{
+			padding: 20px 10px;
+			background: #000;
+			margin: 10px 0px;
+			line-height: 200px;
+		}
+		.pic-i{
+			display: inline-block;
+			height: 300px;
+			width: auto;
+			margin: 0px;
+			vertical-align: middle;
+		}
+		.row-1-right{
+			vertical-align: middle;
+			display: inline-block;
+		}
+		.name-o{
+			font-size: 60px;
+			line-height: 60px;
+			margin-left: 40px;
+			font-family: sans-serif;
+			font-weight: 800;
+			color: #ffe215;
+		}
+		
+		.lastFm-o{
+			color: #eee;
+		}*/
+		.pic-o{
+			border-radius: 50%;
+		}
+		.vcenter{
+			display: inline-block;
+			vertical-align: middle;
+			float: none;
+		}
+		.lastFm-o{
+			line-height: 10px;
+			font-size: 12px;
+			text-decoration: underline;
+		}
+		.desc-o{
+			overflow-y: scroll;
+			max-height: 200px;
+			font-weight: 400; 
+			font-size: 12px;
+		}
+		li.col-sm-3 {
+			list-style: none;
+			background: #eee;
+			border: 1px dashed #ccc;
+			
+			padding: 5px;
+		}
+	</style>
+  </head>
+  <body>
+	<!-- <form class="navbar-form navbar-left" role="search"> -->
+	  <!-- <div class="form-group"> -->
+		<!-- <input type="text" class="form-control" placeholder="Search"> -->
+	  <!-- </div> -->
+	  <!-- <button type="submit" class="btn btn-default">Submit</button> -->
+	<!-- </form> -->
+	<div class="navbar navbar-inverse navbar-static-top" role="navigation">
+		<div class="container">
+			<div class="navbar-collapse collapse">
+				<form class="navbar-form navbar-left">
+					<div class="form-group">
+						<label style="color: #fff;">Artist name: </label>
+					</div>
+					<div class="form-group">
+						<input type="text" id="form-input" class="form-control"/>
+					</div>
+					<div class="form-group">
+						<input type="button" onclick="sendRequest();" value="Display Info" class="form-control">
+						<!-- <button type="submit" onclick="sendRequest();" class="form-control"/>Submit</button> -->
+					</div>
+				</form>
+			</div><!--/.navbar-collapse -->
+		</div>
+    </div>
+	<div id="output" style="display: none">
+		<div class="jumbotron row-1">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-4 col-md-4 pic-i vcenter"><img src="y.jpg" class="pic-o img-thumbnail" style="width: 300px;"/></div>
+					<!-- <div class="name-i">Artist name:</div> -->
+					<div class="col-sm-7 row-1-right vcenter">
+						<h2 class="name-o"></h2>
+						<div class="well desc-o" style="margin-bottom: 0px;">
+							<p style=""></p>
+						</div>
+						<span class="lastFm-i"><a href="" class="lastFm-o" target="_blank">Click here to visit last.fm web page</a></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="container row-2">
+			<!-- Top Album Row -->
+			<div class="row">
+				<div class="col-md-12">
+					<h2>Top Albums</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-3 top-albums-container">
+				  <h4 class="top-album-title">Heading</h4>
+				  <img data-src="holder.js/200x200" src="" class="img-thumbnail top-album-img" alt="200x200" style="width: 200px; height: 200px;">
+				</div>
+				<div class="col-sm-3 top-albums-container">
+				  <h4 class="top-album-title">Heading</h4>
+				  <img data-src="holder.js/200x200" src="" class="img-thumbnail top-album-img" alt="200x200" style="width: 200px; height: 200px;">
+				</div>
+				<div class="col-sm-3 top-albums-container">
+				  <h4 class="top-album-title">Heading</h4>
+				  <img data-src="holder.js/200x200" src="" class="img-thumbnail top-album-img" alt="200x200" style="width: 200px; height: 200px;">
+				</div>
+				<div class="col-sm-3 top-albums-container">
+				  <h4 class="top-album-title">Heading</h4>
+				  <img data-src="holder.js/200x200" src="" class="img-thumbnail top-album-img" alt="200x200" style="width: 200px; height: 200px;">
+				</div>
+			</div>
+		</div>
+		
+		<div class="container row-3">
+			<!-- Similar Artists Row -->
+			<div class="row">
+				<div class="col-md-12">
+					<h2>Similar Artists</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="list-group similar-artist-ul">
+						
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
+	
+	<div id="error" style="display: none;">
+		<h2 class="text-center">No Data to show.</h2>
+	</div>
+	<div class="container">
+		<footer class="footer navbar-static-bottom">
+			<hr />
+			<p class="text-center">© Yogesh Maurya</p>
+		</footer>
+	</div>
+	<script type="text/javascript" src="music.js"></script>
+  </body>
+</html>
